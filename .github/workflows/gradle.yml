@@ -12,8 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: java -jar ./artifacts/app-ibank-build-for-testers.jar -P:profile=test &
-
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -27,3 +26,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Jar
+      run: java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
+    - name: gradlew
+      run: gradlew test --info -Dselenide.headless=true

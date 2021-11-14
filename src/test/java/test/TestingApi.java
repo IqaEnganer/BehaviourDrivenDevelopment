@@ -33,3 +33,9 @@ public class TestingApi {
 
 
 }
+// install:
+//         - chmod +x gradlew
+//         - java -jar artifacts/app-ibank.jar -P:profile=test &
+//
+//         build_script:
+//         - ./gradlew test --info -Dselenide.headless=true
