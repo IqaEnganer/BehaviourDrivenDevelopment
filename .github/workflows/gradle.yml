@@ -24,7 +24,7 @@ jobs:
           distribution: 'adopt'
           cache: gradle
                    - name: Open Jar
-                   run: java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
+                   open: java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
                           - name: Grant execute permission for gradlew
                           run: chmod +x gradlew
                                  - name: Build with Gradle
