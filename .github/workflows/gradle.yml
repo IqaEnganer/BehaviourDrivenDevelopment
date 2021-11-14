@@ -12,7 +12,8 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: java -jar ./artifacts/app-ibank-build-for-testers.jar -P:profile=test &
+
 
     steps:
     - uses: actions/checkout@v2

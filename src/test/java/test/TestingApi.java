@@ -5,6 +5,7 @@ import data.DataHelper;
 import jdk.jfr.Name;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import page.DashboardPage;
 import page.LoginPage1;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -28,5 +29,7 @@ public class TestingApi {
         var verificationInfo = DataHelper.getCodeVerify(authInfo);
         var DashboardPage = verificationPage.validVerify(verificationInfo);
     }
+
+
 
 }
