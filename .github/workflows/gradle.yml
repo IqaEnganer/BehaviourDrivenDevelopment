@@ -23,7 +23,7 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x gradlew test --info -Dselenide.headless=true
     - name: Jar
       run: java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
     - name: Build with Gradle
