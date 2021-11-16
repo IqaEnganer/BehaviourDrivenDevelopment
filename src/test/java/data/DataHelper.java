@@ -57,24 +57,34 @@ public class DataHelper {
         return new Verification("12347");
     }
 
+    public static class CardInfo {
 
-      /*  private ElementsCollection cards = $$(".list__item");
-        private final String balanceStart = "баланс: ";
-        private final String balanceFinish = " р.";
+        String numberCard1;
+        String numberCard2;
 
-        public Dashboard() {
+        public CardInfo(String numberCard1, String numberCard2) {
+            this.numberCard1 = numberCard1;
+            this.numberCard2 = numberCard2;
         }
 
-        public int getCardBalance(String id) {
-            // TODO: перебрать все карты и найти по атрибуту data-test-id
-            return extractBalance(text);
+        public String getNumberCard1() {
+            return numberCard1;
         }
 
-        private int extractBalance(String text) {
-            val start = text.indexOf(balanceStart);
-            val finish = text.indexOf(balanceFinish);
-            val value = text.substring(start + balanceStart.length(), finish);
-            return Integer.parseInt(value);
-        }*/
+        public String getNumberCard2() {
+            return numberCard2;
+        }
 
+        public void setNumberCard1(String numberCard1) {
+            this.numberCard1 = numberCard1;
+        }
+
+        public void setNumberCard2(String numberCard2) {
+            this.numberCard2 = numberCard2;
+        }
+    }
+
+    public static CardInfo getCardInfo() {
+        return new CardInfo("5559 0000 0000 0001", "5559 0000 0000 0002");
+    }
 }
