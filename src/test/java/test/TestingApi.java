@@ -27,7 +27,6 @@ public class TestingApi {
         var verificationPage = loginPage1.signIn(authInfo);
         var verificationCode = DataHelper.getCodeVerify(authInfo);
         verificationPage.validVerify(verificationCode);
-
         var getCard = new DashboardPage();
         var transfer = new DepositWithdrawal();
         var balanceFirstCard = getCard.getFirstCardBalance();
@@ -45,6 +44,7 @@ public class TestingApi {
             transfer.moneyTransfer1(DataHelper.getCardInfo(), changeStringFirstCard);
         }
     }
+
 
     @Name("Successful transfer to the first card")
     @Test

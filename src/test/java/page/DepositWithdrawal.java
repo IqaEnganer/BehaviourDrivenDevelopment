@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import data.DataHelper;
+import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
@@ -21,8 +22,9 @@ public class DepositWithdrawal {
 
     public static void moneyTransfer(DataHelper.CardInfo cardInfo, String sum) {
         topUp.get(0).click();
-        amount.doubleClick().sendKeys("BACKSPACE");
+        amount.sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.BACK_SPACE);
         amount.setValue(sum);
+        where.sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.BACK_SPACE);
         where.setValue(cardInfo.getNumberCard2());
         topUpAmount.click();
 
@@ -30,8 +32,9 @@ public class DepositWithdrawal {
 
     public static void moneyTransfer1(DataHelper.CardInfo cardInfo, String sum) {
         topUp.get(1).click();
-        amount.doubleClick().sendKeys("BACKSPACE");
+        amount.sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.BACK_SPACE);
         amount.setValue(sum);
+        where.sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.BACK_SPACE);
         where.setValue(cardInfo.getNumberCard1());
         topUpAmount.click();
 
